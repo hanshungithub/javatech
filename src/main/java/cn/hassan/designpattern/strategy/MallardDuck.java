@@ -1,5 +1,8 @@
 package cn.hassan.designpattern.strategy;
 
+import cn.hassan.designpattern.strategy.impl.FlyWithWings;
+import cn.hassan.designpattern.strategy.impl.Quack;
+
 /**
  * Created with idea
  * Author: hss

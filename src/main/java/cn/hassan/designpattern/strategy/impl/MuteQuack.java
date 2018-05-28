@@ -1,4 +1,6 @@
-package cn.hassan.designpattern.strategy;
+package cn.hassan.designpattern.strategy.impl;
+
+import cn.hassan.designpattern.strategy.QuackBehavior;
 
 /**
  * Created with idea
@@ -6,7 +8,7 @@ package cn.hassan.designpattern.strategy;
  * Date: 2018/5/28 8:12
  * Description:
  */
-public class MuteQuack implements QuackBehavior{
+public class MuteQuack implements QuackBehavior {
 
 	@Override
 	public void quack() {
