@@ -29,4 +29,27 @@ public class StringTest {
         }
     }
 
+    @Test
+    public void testThree() {
+        HashMap<Integer, String> map = new HashMap<>();
+        map.put(1, "hassan");
+        System.out.println(map);
+    }
+
+    @Test
+    public void testTwo() {
+        int n = 16;
+        System.out.println(tableSizeFor(n));
+
+    }
+
+    int tableSizeFor(int cap) {
+        int n = cap - 1;
+        n |= n >>> 1;
+        n |= n >>> 2;
+        n |= n >>> 4;
+        n |= n >>> 8;
+        n |= n >>> 16;
+        return n + 1;
+    }
 }
