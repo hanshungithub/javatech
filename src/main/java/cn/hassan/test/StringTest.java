@@ -38,12 +38,17 @@ public class StringTest {
 
     @Test
     public void testTwo() {
-        int n = 16;
+        int n = 25;
         System.out.println(tableSizeFor(n));
 
     }
 
-    int tableSizeFor(int cap) {
+	/**
+	 *
+	 * @param cap 参数
+	 * @return 2的幂数
+	 */
+	int tableSizeFor(int cap) {
         int n = cap - 1;
         n |= n >>> 1;
         n |= n >>> 2;
