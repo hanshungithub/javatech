@@ -32,8 +32,11 @@ public class StringTest {
     @Test
     public void testThree() {
         HashMap<Integer, String> map = new HashMap<>();
-        map.put(1, "hassan");
-        System.out.println(map);
+		System.out.println(Integer.hashCode(1));
+		map.put(1, "hassan");
+		map.put(2, "sherry");
+		map.put(3, "jack");
+		map.get(1);
     }
 
     @Test
@@ -57,4 +60,15 @@ public class StringTest {
         n |= n >>> 16;
         return n + 1;
     }
+
+    @Test
+	public void exceptionTest() {
+		try {
+			System.out.println("normal...");
+		} catch (Exception e) {
+			throw e;
+		}finally {
+			System.out.println("finally...");
+		}
+	}
 }
