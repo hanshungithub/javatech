@@ -61,6 +61,27 @@ public class StringTest {
         return n + 1;
     }
 
+    /********************************linkedHashMap***********************************/
+
+    @Test
+    public void linkedHashMapOne() {
+        LinkedHashMap<String, String> map = new LinkedHashMap<>(10, 0.75f, true);
+
+        map.put("1", "a");
+        map.put("2", "b");
+        map.put("3", "c");
+        map.put("4", "d");
+        map.get("2");//2移动到了内部的链表末尾
+        map.get("4");//4调整至末尾
+        map.put("3", "e");//3调整至末尾
+        map.put(null, null);//插入两个新的节点 null
+        map.put("5", null);//5
+        Iterator<Map.Entry<String, String>> iterator = map.entrySet().iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+    }
+
     @Test
 	public void exceptionTest() {
 		try {
@@ -71,4 +92,14 @@ public class StringTest {
 			System.out.println("finally...");
 		}
 	}
+
+	@Test
+    public void testLinkedList() {
+        LinkedList<String> list = new LinkedList<>();
+        list.add("hassan");
+        list.add("sherru");
+    }
+
+    //静下心来，认认真真的去做其他的事，要明白，只有自己的能力上去了，你才可能站住脚，事情要一点一点的做
+    //不要太浮躁，要脚踏实地一步一个脚印的去做一些事情
 }
