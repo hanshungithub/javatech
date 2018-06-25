@@ -100,6 +100,13 @@ public class StringTest {
         list.add("sherru");
     }
 
-    //静下心来，认认真真的去做其他的事，要明白，只有自己的能力上去了，你才可能站住脚，事情要一点一点的做
-    //不要太浮躁，要脚踏实地一步一个脚印的去做一些事情
+    /*****************************************************TreeMap**************************************************/
+
+    @Test
+    public void testTreeMap() {
+        TreeMap<Integer, String> map = new TreeMap<>();
+        map.put(1, "hassan");
+        map.put(2, "sherry");
+        map.put(3, "jack");
+    }
 }
