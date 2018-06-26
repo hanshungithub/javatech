@@ -2,6 +2,7 @@ package cn.hassan.test;
 
 import org.junit.jupiter.api.Test;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -14,7 +15,7 @@ public class StringTest {
 
     @Test
     public void testOne() {
-        ArrayList<Integer> list = new ArrayList<Integer>();
+        ArrayList<Integer> list = new ArrayList<>();
         list.add(2);
         Iterator<Integer> iterator = list.iterator();
         while(iterator.hasNext()){
@@ -109,4 +110,24 @@ public class StringTest {
         map.put(2, "sherry");
         map.put(3, "jack");
     }
+
+    @Test
+	public void testCalander() {
+		getPastDate(7);
+	}
+	/**
+	 * 获取过去第几天的日期
+	 *
+	 * @param past
+	 * @return
+	 */
+	public static String getPastDate(int past) {
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(Calendar.DAY_OF_YEAR, calendar.get(Calendar.DAY_OF_YEAR) - past);
+		Date today = calendar.getTime();
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String result = format.format(today);
+		System.out.println(result);
+		return result;
+	}
 }

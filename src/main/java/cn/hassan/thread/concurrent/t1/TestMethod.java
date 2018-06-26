@@ -1,10 +1,6 @@
 package cn.hassan.thread.concurrent.t1;
 
-import org.junit.Test;
-
 public class TestMethod {
-
-	@Test
 	public void test01() {
 		ThreadTwo threadTwo = new ThreadTwo();
 
@@ -19,8 +15,6 @@ public class TestMethod {
 		d.start();
 		e.start();
 	}
-
-	@Test
 	public void testTwo() {
 		Alogin alogin = new Alogin();
 		alogin.start();
