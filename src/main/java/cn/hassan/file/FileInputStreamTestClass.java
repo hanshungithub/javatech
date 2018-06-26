@@ -24,8 +24,6 @@ public class FileInputStreamTestClass {
             while ((inputStream.read(bytes)) != -1){
                 outputStream.write(bytes);
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
