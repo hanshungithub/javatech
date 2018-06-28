@@ -1,4 +1,4 @@
-package cn.hassan.reflect;
+package cn.hassan.reflect.t1;
 
 import org.junit.jupiter.api.Test;
 
@@ -22,7 +22,7 @@ public class ReflectTest {
 			/**
 			 * 名称信息
 			 */
-            Class clazz = Class.forName("cn.hassan.reflect.MacBook");
+            Class clazz = Class.forName("cn.hassan.reflect.t1.MacBook");
             String name = clazz.getName();
             String canonicalName = clazz.getCanonicalName();
             String simpleName = clazz.getSimpleName();
@@ -42,7 +42,7 @@ public class ReflectTest {
 		 * 字段信息
 		 */
 		try {
-			Class clazz = Class.forName("cn.hassan.reflect.MacBook");
+			Class clazz = Class.forName("cn.hassan.reflect.t1.MacBook");
 			Field site = clazz.getField("site");
 			Field[] fields = clazz.getFields();
 
@@ -75,7 +75,7 @@ public class ReflectTest {
 	@Test
 	public void testMethod() {
 		try {
-			Class<?> clazz = Class.forName("cn.hassan.reflect.MacBook");
+			Class<?> clazz = Class.forName("cn.hassan.reflect.t1.MacBook");
 
 			//创建对象
 			Constructor<?> constructors = clazz.getConstructor();
