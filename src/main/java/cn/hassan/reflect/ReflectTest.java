@@ -61,7 +61,6 @@ public class ReflectTest {
 				f.setAccessible(true);
 				System.out.println(f.getName()+" - "+f.get(obj));
 			}
-
 			System.out.println(site);
 			System.out.println(fields);
 			System.out.println(name);
