@@ -25,6 +25,10 @@ public class MacBook {
 	public MacBook() {
     }
 
+	public void sayString(String msg) {
+		System.out.println("hello," + msg);
+	}
+
 	@Override
 	public String toString() {
 		return "MacBook{" +

@@ -2,7 +2,9 @@ package cn.hassan.reflect;
 
 import org.junit.jupiter.api.Test;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.List;
 
@@ -65,6 +67,26 @@ public class ReflectTest {
 			System.out.println(fields);
 			System.out.println(name);
 			System.out.println(declaredFields);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Test
+	public void testMethod() {
+		try {
+			Class<?> clazz = Class.forName("cn.hassan.reflect.MacBook");
+
+			//创建对象
+			Constructor<?> constructors = clazz.getConstructor();
+			Object obj = constructors.newInstance();
+
+			//创建对象
+			Object o = clazz.newInstance();
+			//需要传的参数是 方法名 方法需要的参数
+			Method method = clazz.getMethod("sayString", String.class);
+			//调用方法
+			method.invoke(o, "world");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
