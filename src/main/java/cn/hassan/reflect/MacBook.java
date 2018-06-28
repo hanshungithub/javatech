@@ -11,15 +11,28 @@ public class MacBook {
     private String name;
     private double size;
     private double price;
+    public String site;
+    public int year;
 
-    public MacBook(String name, double size, double price) {
-        this.name = name;
-        this.size = size;
-        this.price = price;
+	public MacBook(String name, double size, double price, String site, int year) {
+		this.name = name;
+		this.size = size;
+		this.price = price;
+		this.site = site;
+		this.year = year;
+	}
+
+	public MacBook() {
     }
 
-    public MacBook() {
-    }
-
-
+	@Override
+	public String toString() {
+		return "MacBook{" +
+				"name='" + name + '\'' +
+				", size=" + size +
+				", price=" + price +
+				", site='" + site + '\'' +
+				", year=" + year +
+				'}';
+	}
 }
