@@ -3,6 +3,7 @@ package cn.hassan.reflect.t3;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
 
 /**
  * Created with idea
@@ -39,5 +40,53 @@ public class PersonTest {
 
 		// Person p = (Person)obj;
 		// p.show();
+	}
+
+	@Test
+	public void testTwo() throws Exception {
+		Class<?> clazz = Class.forName("cn.hassan.reflect.t3.Person");
+		//Constructor<?> constructor = clazz.getConstructor(new Class[]{String.class, int.class, String.class});
+		Constructor<?> constructor = clazz.getConstructor(String.class, int.class, String.class);
+		Object o = constructor.newInstance("hassan", 25, "杭州");
+		//System.out.println(o);
+		Constructor<?> declaredConstructor = clazz.getDeclaredConstructor(String.class);
+		declaredConstructor.setAccessible(true);
+		Object hassan = declaredConstructor.newInstance("hassan");
+		System.out.println(hassan);
+
+		boolean accessible = constructor.isAccessible();
+		boolean accessible1 = declaredConstructor.isAccessible();
+		System.out.println(accessible +" --- "+ accessible1);
+	}
+
+	@Test
+	public void testThree() throws Exception{
+		Class<?> clazz = Class.forName("cn.hassan.reflect.t3.Person");
+
+		Constructor<?> constructor = clazz.getConstructor();
+		//创建对象
+		Object o = constructor.newInstance();
+
+		// 获取所有的成员变量(私有的和默认的需要使用getDeclaredField来获取)
+		// Field[] fields = c.getFields();
+		// Field[] fields = c.getDeclaredFields();
+		// for (Field field : fields) {
+		// System.out.println(field);
+		// }
+
+		Field address = clazz.getField("address");
+		address.set(o, "hangzhou");
+		System.out.println(o);
+
+		//私有字段必须使用getDeclaredField来获取
+		Field name = clazz.getDeclaredField("name");
+		name.setAccessible(true);
+		name.set(o, "hassan");
+		System.out.println(o);
+
+		Field age = clazz.getDeclaredField("age");
+		age.setAccessible(true);
+		age.set(o, 25);
+		System.out.println(o);
 	}
 }
