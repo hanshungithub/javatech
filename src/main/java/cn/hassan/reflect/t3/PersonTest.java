@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
 /**
  * Created with idea
@@ -88,5 +89,33 @@ public class PersonTest {
 		age.setAccessible(true);
 		age.set(o, 25);
 		System.out.println(o);
+	}
+
+	@Test
+	public void testFour() throws Exception{
+		Class<?> clazz = Class.forName("cn.hassan.reflect.t3.Person");
+		Constructor<?> constructor = clazz.getConstructor();
+		Object o = constructor.newInstance();
+
+		// 获取所有的方法
+		// Method[] methods = c.getMethods(); // 获取自己的包括父亲的公共方法
+		// Method[] methods = c.getDeclaredMethods(); // 获取自己的所有的方法
+		// for (Method method : methods) {
+		// System.out.println(method);
+		// }
+
+		Method show = clazz.getMethod("show");
+		show.invoke(o);
+
+		Method getString = clazz.getMethod("getString", String.class, int.class);
+		Object hassan = getString.invoke(o, "hassan", 25);
+		System.out.println(hassan);
+
+		Method method = clazz.getMethod("method", String.class);
+		method.invoke(o, "hassan");
+
+		Method function = clazz.getDeclaredMethod("function");
+		function.setAccessible(true);
+		function.invoke(o);
 	}
 }
