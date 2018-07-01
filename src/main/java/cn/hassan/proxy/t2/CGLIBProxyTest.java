@@ -10,6 +10,10 @@ import org.junit.jupiter.api.Test;
  */
 public class CGLIBProxyTest {
 
+    /**
+     * cglib的代理是通过继承来实现的，它也动态的创建了一个类，这个类的父类是被代理的类，代理类重写了父类的public和
+     * 非final方法，改为调用callback中的方法
+     */
     @Test
     public void testOne() {
         RealService instance = (RealService)ProxyContainer.getInstance(RealService.class);
