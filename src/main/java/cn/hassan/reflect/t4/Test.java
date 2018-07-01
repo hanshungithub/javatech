@@ -13,7 +13,7 @@ public class Test {
 		System.out.println("-----------");
 		// 我们要创建一个动态代理对象
 		// Proxy类中有一个方法可以创建动态代理对象
-		// public static Object newProxyInstance(ClassLoader loader,Class<?>[] interfaces,InvocationHandler h)
+		// public static Object newProxyInstance(ClassLoader loader,Class<?>[] interfaces,SimpleInvocationHandler h)
 		// 我准备对ud对象做一个代理对象
 		MyInvocationHandler handler = new MyInvocationHandler(ud);
 		UserDao proxy = (UserDao) Proxy.newProxyInstance(ud.getClass().getClassLoader(), ud.getClass().getInterfaces(), handler);
