@@ -6,6 +6,7 @@ package cn.hassan.annotation.t2;
  * Date: 2018/7/1 14:49
  * Description:
  */
+@SimpleSingleton
 public class ServiceB {
 
     public void action() {
