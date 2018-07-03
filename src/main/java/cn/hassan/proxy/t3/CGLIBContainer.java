@@ -39,6 +39,7 @@ public class CGLIBContainer {
         for (Class<?> cls : aspects){
             Aspect aspect = cls.getAnnotation(Aspect.class);
             if (aspect != null) {
+            	//public static Method getMethod(final Class<?> cls, final String name, final Class... types)
                 Method before = getMethod(cls, "before", Object.class, Method.class, Object[].class);
                 Method after = getMethod(cls, "after", Object.class, Method.class, Object[].class);
                 Method exception = getMethod(cls, "exception", Object.class, Method.class, Object[].class,Throwable.class);
