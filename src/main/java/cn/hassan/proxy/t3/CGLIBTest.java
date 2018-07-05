@@ -1,7 +1,7 @@
 package cn.hassan.proxy.t3;
 
 import cn.hassan.annotation.t2.ServiceA;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 /**
  * Created with idea

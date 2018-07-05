@@ -1,6 +1,6 @@
-package cn.hassan.stream.t2;
+package cn.hassan.stream.t2;;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.io.IOException;
 import java.nio.charset.Charset;

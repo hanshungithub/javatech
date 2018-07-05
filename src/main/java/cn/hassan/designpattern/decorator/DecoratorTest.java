@@ -1,6 +1,6 @@
 package cn.hassan.designpattern.decorator;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 /**
  * Created with idea

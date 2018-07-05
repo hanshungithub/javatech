@@ -1,6 +1,7 @@
 package cn.hassan.designpattern.factory;
 
-import org.junit.jupiter.api.Test;
+
+import org.junit.Test;
 
 /**
  * Created with idea

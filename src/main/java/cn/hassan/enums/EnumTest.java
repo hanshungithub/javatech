@@ -1,6 +1,6 @@
 package cn.hassan.enums;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 /**
  * Created with idea

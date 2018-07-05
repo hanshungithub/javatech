@@ -1,7 +1,5 @@
 package cn.hassan.thread.automic;
 
-import org.junit.jupiter.api.Test;
-
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**

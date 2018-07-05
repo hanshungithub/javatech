@@ -2,7 +2,7 @@ package cn.hassan.designpattern.observer;
 
 import cn.hassan.designpattern.observer.impl.CurrentConditionsDisplay;
 import cn.hassan.designpattern.observer.impl.WeatherData;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 /**
  * Created with idea

@@ -1,6 +1,6 @@
 package cn.hassan.thread.lock;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.Random;
 

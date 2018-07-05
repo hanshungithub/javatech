@@ -4,7 +4,7 @@ import cn.hassan.designpattern.command.impl.GarageDoorOpenCommand;
 import cn.hassan.designpattern.command.impl.LightOnCommand;
 import cn.hassan.designpattern.command.pojo.GarageDoor;
 import cn.hassan.designpattern.command.pojo.Light;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 /**
  * Created with idea

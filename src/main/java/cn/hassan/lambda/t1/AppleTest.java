@@ -1,6 +1,6 @@
 package cn.hassan.lambda.t1;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Comparator;

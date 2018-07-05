@@ -3,7 +3,7 @@ package cn.hassan.designpattern.command;
 import cn.hassan.designpattern.command.impl.StereoOffCommand;
 import cn.hassan.designpattern.command.impl.StereoOnWithCDCommand;
 import cn.hassan.designpattern.command.pojo.Stereo;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 /**
  * Created with idea

@@ -1,6 +1,6 @@
 package cn.hassan.test;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.text.SimpleDateFormat;
 import java.util.*;

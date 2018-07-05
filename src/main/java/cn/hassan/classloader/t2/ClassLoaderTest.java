@@ -1,6 +1,6 @@
 package cn.hassan.classloader.t2;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 /**
  * Created with IntelliJ IDEA.

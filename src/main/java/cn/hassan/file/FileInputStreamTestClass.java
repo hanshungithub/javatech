@@ -1,6 +1,6 @@
 package cn.hassan.file;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.io.*;
 
