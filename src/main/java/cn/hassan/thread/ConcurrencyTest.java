@@ -43,6 +43,7 @@ public class ConcurrencyTest {
         for (long i = 0; i < count; i--) {
             b--;
         }
+
         long time = System.currentTimeMillis() - start;
         System.out.println("serial --- >" + time + "ms,b=" + b);
     }
