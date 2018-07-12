@@ -1,4 +1,4 @@
-package cn.hassan.thread.lock;
+package cn.hassan.thread.lock.t1;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

@@ -1,4 +1,4 @@
-package cn.hassan.thread.lock;
+package cn.hassan.thread.lock.t1;
 
 import org.junit.Test;
 
