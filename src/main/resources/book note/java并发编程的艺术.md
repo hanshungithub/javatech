@@ -1,3 +1,22 @@
+# 2 Java并发编程的底层实现原理
+#### 2.1 volatile的定义与实现原理
+    Java允许线程访问共享变量，为了确保共享变量能被准确和一致的更新
+    原理：
+        1）将当前处理器缓存行的数据写会到系统内存。
+        2）这个写会到内存的操作会使其它CPU缓存了该内存地址的数据无效
+        3）
+#### synchronized实现原理与应用
+    1，synchronized实现同步的基础：
+        Java中的每一个对象都可以作为一个锁
+        对于普通同步方法，锁是当前实例对象
+        对于静态同步方法，锁是当前的Class对象
+        对于同步方法块，锁是Synchronized括号里的对象
+    2，JVM基于进入和退出Monitor对象来实现方法同步和代码块同步，但两者的实现细节不一样。代码块同步是使用monitorenter和monitorexit指令实现的，而方法同步是使用另外一种方式实现的，细节在JVM规范里并没有详细说明。但是，方法的同步同样可以使用这两个指令来实现
+    3，compare and swap CAS操作需要输入两个值，一个旧值（期望操作前的值）和一个新值
+    在操作期间先比较旧值是否发生了变化，如果没有发生变化才交换成新值，发生了
+    变化则不交换
+    
+    
 #### Fork/Join框架的原理
     ForkJoinPool是由ForkJoinTask数组和ForkJoinWorkThread数组组成，ForkJoinTask数组负责将存放程序提交给ForkJoinPool的任务，而ForkJoinWorkerThread数组负责执行这些任务
 
@@ -52,4 +71,8 @@
     2，任务的执行。包括任务执行的核心接口Executor，以及继承自Executor的ExecutorService接口
     （ThreadPoolExecutor和ScheduledThreadPoolExecutor）
     3，异步计算的结果。包括接口Future和实现Future的接口FutureTask
-##### 10.1 
+##### 10.1 Execuator框架的成员
+    1，ThreadPoolExecutor通常使用工厂类Executors来创建
+    1.1 FixedThreadPool是由Executors提供的，创建使用固定线程数的，适用于负载比较重的服务器
+    1.2 SingleThreadPool创建单个线程的，适用于保证顺序执行各个任务，并且在任意的时间点不会有多个线程活动的场景
+    1.3 CachedThreadPool根据需求创建线程的
