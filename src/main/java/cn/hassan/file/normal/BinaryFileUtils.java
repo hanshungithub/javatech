@@ -1,4 +1,4 @@
-package cn.hassan.file;
+package cn.hassan.file.normal;
 
 import java.io.*;
 
