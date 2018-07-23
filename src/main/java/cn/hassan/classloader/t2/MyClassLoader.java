@@ -1,6 +1,6 @@
 package cn.hassan.classloader.t2;
 
-import cn.hassan.file.normal.BinaryFileUtils;
+import cn.hassan.file.normal.t1_fileUtil.BinaryFileUtils;
 
 import java.io.IOException;
 
