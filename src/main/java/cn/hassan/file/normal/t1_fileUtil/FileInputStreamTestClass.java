@@ -1,4 +1,4 @@
-package cn.hassan.file.normal;
+package cn.hassan.file.normal.t1_fileUtil;
 
 import org.junit.Test;
 
