@@ -1,0 +1,16 @@
+如果一个响应没有包含Cache-Control头，那么就不会被缓存在客户端
+
+ClientDoneRequest -浏览器完成将HTTP请求发送到Fiddler的时间。 
+DNSTime - # milliseconds Fiddler spent in DNS looking up the server's IP address.
+GatewayDeterminationTime - # milliseconds Fiddler spent determining the upstream gateway proxy to use (e.g. processing autoproxy script). Mutually exclusive to DNSTime.
+TCPConnectTime - # milliseconds Fiddler与服务器建立TCP/IP连接的用时
+HTTPSHandshakeTime – Amount of time spent in HTTPS handshake
+ServerConnected – 与服务器建立连接的时间，由于服务器连接的重用，该时间可能比ClientConnected早。
+FiddlerBeginRequest – The time at which Fiddler began sending the HTTP request to the server.
+ServerGotRequest - Exact time that Fiddler finished (re)sending the HTTP request to the server.
+ServerBeginResponse - Exact time that Fiddler got the first bytes of the server's HTTP response.
+ServerDoneResponse - Exact time that Fiddler got the last bytes of the server's HTTP response.
+ClientBeginResponse - 开始向客户浏览器返回HTTP响应数据的时间.
+ClientDoneResponse- 完成向客户浏览器返回HTTP响应数据的时间.
+服务器端处理及响应的时间：ServerBeginResponse - ServerGotRequest
+网络传输耗时（上传）：(ServerGotRequest - ClientDoneRequest) - (DNSTime + TCPConnectTime)
