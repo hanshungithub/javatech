@@ -1,5 +1,6 @@
 package cn.hassan.spring.config;
 
+import cn.hassan.spring.context.MyApplicationContext;
 import cn.hassan.spring.pojo.Person;
 import cn.hassan.spring.pojo.Yellow;
 import org.junit.Test;
@@ -31,5 +32,15 @@ public class MainConfigTest {
 		for (String name : definitionNames) {
 			System.out.println(name);
 		}
+	}
+
+	@Test
+	public void test03() {
+		//1、创建ioc容器
+		AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfigOfLifeCycle.class);
+		System.out.println("容器创建完成...");
+		//applicationContext.getBean("car");
+		//关闭容器
+		applicationContext.close();
 	}
 }
