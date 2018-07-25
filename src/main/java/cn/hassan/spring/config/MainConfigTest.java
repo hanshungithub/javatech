@@ -1,10 +1,13 @@
 package cn.hassan.spring.config;
 
+import cn.hassan.spring.aop.MathCalculator;
 import cn.hassan.spring.context.MyApplicationContext;
 import cn.hassan.spring.pojo.Person;
 import cn.hassan.spring.pojo.Yellow;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import javax.sql.DataSource;
 
 /**
  * Created with idea
@@ -41,6 +44,42 @@ public class MainConfigTest {
 		System.out.println("容器创建完成...");
 		//applicationContext.getBean("car");
 		//关闭容器
+		applicationContext.close();
+	}
+
+	@Test
+	public void test04() {
+		AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
+		//1、创建一个applicationContext
+		//2、设置需要激活的环境
+		applicationContext.getEnvironment().setActiveProfiles("test");
+		//3、注册主配置类
+		applicationContext.register(MainConfigOfProfile.class);
+		//4、启动刷新容器
+		applicationContext.refresh();
+
+
+		String[] namesForType = applicationContext.getBeanNamesForType(DataSource.class);
+		for (String string: namesForType) {
+			System.out.println(string);
+		}
+
+		Yellow bean = applicationContext.getBean(Yellow.class);
+		System.out.println(bean);
+		applicationContext.close();
+	}
+
+	@Test
+	public void test05() {
+		AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfigOfAOP.class);
+
+		//1、不要自己创建对象
+//		MathCalculator mathCalculator = new MathCalculator();
+//		mathCalculator.div(1, 1);
+		MathCalculator mathCalculator = applicationContext.getBean(MathCalculator.class);
+
+		mathCalculator.div(1, 1);
+
 		applicationContext.close();
 	}
 }
