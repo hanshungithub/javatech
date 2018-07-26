@@ -58,9 +58,9 @@ import javax.sql.DataSource;
  *  * 								如果正常，利用事务管理器，提交事务
  *  *
  */
+@EnableTransactionManagement
 @ComponentScan("cn.hassan.spring.tx")
 @Configuration
-@EnableTransactionManagement
 public class TxConfig {
 
 	@Bean
