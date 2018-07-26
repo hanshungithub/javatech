@@ -15,7 +15,7 @@ public class UserService {
 	public void insertUser(){
 		userDao.insert();
 		System.out.println("插入完成...");
-		int i = 10/0;
+		//int i = 10/0;
 	}
 
 }
