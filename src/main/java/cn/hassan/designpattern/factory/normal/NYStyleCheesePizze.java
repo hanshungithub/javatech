@@ -1,4 +1,4 @@
-package cn.hassan.designpattern.factory;
+package cn.hassan.designpattern.factory.normal;
 
 /**
  * Created with idea
