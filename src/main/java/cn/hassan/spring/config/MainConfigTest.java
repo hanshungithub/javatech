@@ -1,7 +1,6 @@
 package cn.hassan.spring.config;
 
 import cn.hassan.spring.aop.MathCalculator;
-import cn.hassan.spring.context.MyApplicationContext;
 import cn.hassan.spring.pojo.Person;
 import cn.hassan.spring.pojo.Yellow;
 import org.junit.Test;
