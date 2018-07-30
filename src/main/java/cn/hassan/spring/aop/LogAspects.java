@@ -46,8 +46,9 @@ public class LogAspects {
 	}
 
 	@Around(value = "pointCut()")
-	public void logAroung(ProceedingJoinPoint joinPoint) throws Throwable {
+	public Object logAroung(ProceedingJoinPoint joinPoint) throws Throwable {
 		System.out.println("Aroung...");
-		joinPoint.proceed();
+		Object proceed = joinPoint.proceed();
+		return proceed;
 	}
 }
